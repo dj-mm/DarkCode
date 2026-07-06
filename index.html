@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkCode v1.0</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="DarkCode_Part1B.css">
+</head>
+<body>
+
+<div class="glow"></div>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="navbar-brand brand" href="#home">
+<i class="fa-solid fa-shield-halved"></i> DARKCODE
+</a>
+
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Open navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link text-light" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link text-light" href="#workspace">Workspace</a></li>
+<li class="nav-item"><a class="nav-link text-light" href="#history">History</a></li>
+<li class="nav-item"><a class="nav-link text-light" href="#about">About</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main>
+<section class="hero container" id="home">
+<span class="badge text-bg-dark border border-info px-3 py-2 mb-3">
+SYMBOLIC MESSAGE ENCODER
+</span>
+
+<h1>DARKCODE</h1>
+
+<p>
+Encode messages into a unique symbolic style and decode them with the same secret key.
+</p>
+
+<div class="hero-actions">
+<a class="btn btn-cyber btn-lg" href="#workspace">
+<i class="fa-solid fa-terminal"></i>
+Open Workspace
+</a>
+<a class="btn btn-outline-info btn-lg" href="#history">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Recent History
+</a>
+</div>
+
+<div class="row g-3 mt-4">
+<div class="col-md-4">
+<div class="metric-box">
+<strong>Private Key</strong>
+<span>Use your own secret key</span>
+</div>
+</div>
+<div class="col-md-4">
+<div class="metric-box">
+<strong>Fast Tools</strong>
+<span>Copy, download, share, and swap</span>
+</div>
+</div>
+<div class="col-md-4">
+<div class="metric-box">
+<strong>Multi Language</strong>
+<span>English, Hindi, numbers, and symbols</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-block container" id="workspace">
+<div class="section-heading">
+<span>Ready To Use</span>
+<h2>DarkCode Workspace</h2>
+<p>Enter a key, write your message, and generate DarkCode instantly.</p>
+</div>
+
+<div class="row g-4 mt-1">
+<div class="col-lg-6">
+<div class="glass panel">
+<h4 class="mb-3">
+<i class="fa-solid fa-key text-info"></i>
+Secret Key
+</h4>
+
+<div class="key-row">
+<input
+id="secretKey"
+class="form-control"
+type="password"
+placeholder="Enter Secret Key"
+autocomplete="off">
+<button class="btn btn-outline-info icon-btn" id="toggleKeyBtn" type="button" title="Show or hide key">
+<i class="fa-solid fa-eye"></i>
+</button>
+</div>
+
+<h4 class="mb-3 mt-4">
+<i class="fa-solid fa-pen"></i>
+Input Message
+</h4>
+
+<textarea
+id="inputText"
+class="form-control"
+placeholder="Type English, Hindi, numbers, symbols, or DarkCode here..."></textarea>
+
+<div class="counter mt-2">
+Characters:
+<span id="charCount">0</span>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+Words:
+<span id="wordCount">0</span>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+Lines:
+<span id="lineCount">0</span>
+</div>
+
+<div class="d-grid gap-2 mt-4">
+<button class="btn btn-cyber btn-lg" id="encodeBtn" type="button">
+<i class="fa-solid fa-lock"></i>
+Encode
+</button>
+
+<button class="btn btn-outline-info btn-lg" id="decodeBtn" type="button">
+<i class="fa-solid fa-lock-open"></i>
+Decode
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="glass panel">
+<h4 class="mb-3">
+<i class="fa-solid fa-code"></i>
+DarkCode Output
+</h4>
+
+<textarea
+id="outputText"
+class="form-control"
+readonly
+placeholder="Encoded or decoded output will appear here"></textarea>
+
+<div class="d-grid gap-2 mt-4 utility-grid">
+<button class="btn btn-success btn-lg" id="copyBtn" type="button">
+<i class="fa-solid fa-copy"></i>
+Copy
+</button>
+
+<button class="btn btn-warning btn-lg" id="downloadBtn" type="button">
+<i class="fa-solid fa-download"></i>
+Download
+</button>
+
+<button class="btn btn-primary btn-lg" id="shareBtn" type="button">
+<i class="fa-solid fa-share-nodes"></i>
+Share
+</button>
+
+<button class="btn btn-outline-light btn-lg" id="swapBtn" type="button">
+<i class="fa-solid fa-right-left"></i>
+Swap
+</button>
+
+<button class="btn btn-danger btn-lg" id="clearBtn" type="button">
+<i class="fa-solid fa-trash"></i>
+Clear
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-block container" id="history">
+<div class="section-heading">
+<span>Recent</span>
+<h2>Recent History</h2>
+<p>Quickly return to your latest generated outputs.</p>
+</div>
+
+<div class="glass panel">
+<div class="history-toolbar">
+<h4><i class="fa-solid fa-clock-rotate-left text-info"></i> Recent Activity</h4>
+<button class="btn btn-outline-danger" id="clearHistoryBtn" type="button">
+<i class="fa-solid fa-broom"></i>
+Clear History
+</button>
+</div>
+<div id="historyList" class="history-list"></div>
+</div>
+</section>
+
+<section class="section-block container" id="about">
+<div class="section-heading">
+<span>About</span>
+<h2>DarkCode v1.0</h2>
+<p>A portfolio project by Manash for stylish symbolic message encoding.</p>
+</div>
+
+<div class="glass panel about-panel">
+<p>
+DarkCode turns normal messages into a bold symbolic format with a clean cyber interface and simple sharing tools.
+</p>
+<div class="shortcut-row">
+<span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> Encode</span>
+<span><kbd>Ctrl</kbd> + <kbd>D</kbd> Decode</span>
+<span><kbd>Ctrl</kbd> + <kbd>K</kbd> Clear</span>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+DarkCode v1.0 | Designed by Manash
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="DarkCode_Part1C_UI_Effects.js"></script>
+
+</body>
+</html>
